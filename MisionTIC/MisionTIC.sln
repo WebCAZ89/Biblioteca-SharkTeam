@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MisionTIC", "MisionTIC\MisionTIC.csproj", "{F7A6FBBD-9783-4AE0-8522-277F0015D6A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7A6FBBD-9783-4AE0-8522-277F0015D6A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7A6FBBD-9783-4AE0-8522-277F0015D6A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7A6FBBD-9783-4AE0-8522-277F0015D6A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7A6FBBD-9783-4AE0-8522-277F0015D6A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7379D418-0641-4AB7-8496-D7F42A5C8462}
+	EndGlobalSection
+EndGlobal

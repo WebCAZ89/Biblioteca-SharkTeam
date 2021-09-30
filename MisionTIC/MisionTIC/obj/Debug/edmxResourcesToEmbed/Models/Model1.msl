@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BibliotecaTicModelStoreContainer" CdmEntityContainer="BibliotecaTicEntities">
+    <EntitySetMapping Name="Autor">
+      <EntityTypeMapping TypeName="BibliotecaTicModel.Autor">
+        <MappingFragment StoreEntitySet="Autor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
