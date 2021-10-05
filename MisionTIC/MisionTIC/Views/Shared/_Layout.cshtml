@@ -11,39 +11,151 @@
     <environment exclude="Development">
         <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="~/css/main.css">
     </environment>
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            @Html.ActionLink("Biblioteca", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    @Html.ActionLink("Inicio", "Index", "Home", new { @class = "nav-link" })
-                    @Html.ActionLink("Acerca de", "About", "Home", new { @class = "nav-link" })
-                    @Html.ActionLink("Contacto", "Contact", "Home", new { @class = "nav-link" })
-                    @Html.ActionLink("Autores", "Lista", "Autor", new { @class = "nav-link" })
+    <!-- SideBar -->
+    <section class="full-box cover dashboard-sideBar">
+        <div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+        <div class="full-box dashboard-sideBar-ct">
+            <!--SideBar Title -->
+            <div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+                company <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+            </div>
+            <!-- SideBar User info -->
+            <div class="full-box dashboard-sideBar-UserInfo">
+                <figure class="full-box">
+                    <img src="~/assets/avatars/AdminMaleAvatar.png" alt="UserIcon">
+                    <figcaption class="text-center text-titles">User Name</figcaption>
+                </figure>
+                <ul class="full-box list-unstyled text-center">
+                    <li>
+                        <a href="my-data.html" title="Mis datos">
+                            <i class="zmdi zmdi-account-circle"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="my-account.html" title="Mi cuenta">
+                            <i class="zmdi zmdi-settings"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!" title="Salir del sistema" class="btn-exit-system">
+                            <i class="zmdi zmdi-power"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- SideBar Menu -->
+            <ul class="list-unstyled full-box dashboard-sideBar-Menu">
+                <li>
+                    <a href="home.html">
+                        <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-case zmdi-hc-fw"></i> Administración <i class="zmdi zmdi-caret-down pull-right"></i>
+                    </a>
+                    <ul class="list-unstyled full-box">
+                        <li>
+                            <a href="company.html"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Empresa</a>
+                        </li>
+                        <li>
+                            <a href="category.html"><i class="zmdi zmdi-labels zmdi-hc-fw"></i> Categorias</a>
+                        </li>
+                        <li>
+                            <a href="provider.html"><i class="zmdi zmdi-truck zmdi-hc-fw"></i> Proveedores</a>
+                        </li>
+                        <li>
+                            <a href="book.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Nuevo libro</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Lista", "Autores")"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i> Autores</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Usuarios <i class="zmdi zmdi-caret-down pull-right"></i>
+                    </a>
+                    <ul class="list-unstyled full-box">
+                        <li>
+                            <a href="admin.html"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Administradores</a>
+                        </li>
+                        <li>
+                            <a href="client.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Clientes</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="catalog.html">
+                        <i class="zmdi zmdi-book-image zmdi-hc-fw"></i> Catalogo
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
 
+    <section class="full-box dashboard-contentPage">
+        <!-- NavBar -->
+        <nav class="full-box dashboard-Navbar">
+            <ul class="full-box list-unstyled text-right">
+                <li class="pull-left">
+                    <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+                </li>
+                <li>
+                    <a href="search.html" class="btn-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="container-fluid">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            </footer>
+        </div>
+    </section>
+
+    <!--
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                @Html.ActionLink("Biblioteca", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        @Html.ActionLink("Inicio", "Index", "Home", new { @class = "nav-link" })
+                        @Html.ActionLink("Acerca de", "About", "Home", new { @class = "nav-link" })
+                        @Html.ActionLink("Contacto", "Contact", "Home", new { @class = "nav-link" })
+                        @Html.ActionLink("Autores", "Lista", "Autor", new { @class = "nav-link" })
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
-        </footer>
-    </div>
-    <environment include="Development">
-        <script src="~/Scripts/jquery-3.4.1.js"></script>
-        <script src="~/Scripts/bootstrap.js"></script>
-    </environment>
+        </nav>
+-->
+        
+        <environment include="Development">
+            <script src="~/Scripts/jquery-3.4.1.js"></script>
+            <script src="~/Scripts/bootstrap.js"></script>
+            <script src="~/js/sweetalert2.min.js"></script>
+            <script src="~/js/bootstrap.min.js"></script>
+            <script src="~/js/material.min.js"></script>
+            <script src="~/js/ripples.min.js"></script>
+            <script src="~/js/jquery.mCustomScrollbar.concat.min.js"></script>
+            <script src="~/js/main.js"></script>
+            <script>
+                $.material.init();
+            </script>
+        </environment>
 
 
 </body>

@@ -1,0 +1,39 @@
+﻿@model MisionTIC.Models.viewModels.Autors
+@{
+    ViewBag.Title = "Nuevo Autor";
+}
+
+
+<div class="container-fluid" style="margin-top: 3%;">
+    <div class="page-header">
+        <h1 class="text-titles"><i class="zmdi zmdi-account-box"></i> AGREGAR <small>AUTOR</small></h1>
+    </div>
+    <p class="lead">Agregar un nuevo autor.</p>
+
+    @using (Html.BeginForm("Nuevo", "Autores", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group label-floating">
+                    @Html.LabelFor(d => d.Nombre, new { @class = "control-label" })
+                    @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group label-floating">
+                    @Html.LabelFor(d => d.Nacionalidad, new { @class = "control-label" })
+                    @Html.TextBoxFor(d => d.Nacionalidad, "", new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group label-floating">
+                    @Html.LabelFor(d => d.FechaNacimiento, new { @class = "control-label" })
+                    @Html.TextBoxFor(d => d.FechaNacimiento, "", new { @class = "form-control datepicker" })
+                </div>
+            </div>
+        </div>
+        <p class="text-center" style="margin-top: 20px;">
+            <button type="submit" class="btn btn-info btn-raised btn-sm">Guardar</button>
+        </p>
+     }
+</div>
