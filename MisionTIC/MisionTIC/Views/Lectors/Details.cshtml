@@ -1,0 +1,50 @@
+﻿@model MisionTIC.Models.Lector
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Lector</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreLector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreLector)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimientoLec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimientoLec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoLector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoLector)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoLector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorreoLector)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Identifiacion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
