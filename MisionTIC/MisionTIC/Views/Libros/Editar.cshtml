@@ -1,0 +1,73 @@
+﻿@model MisionTIC.Models.Libro
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<div class="container-fluid" style="margin-top: 3%;">
+    <div class="page-header">
+        <h1 class="text-titles"><i class="zmdi zmdi-account-box"></i> EDITAR <small>LIBRO</small></h1>
+    </div>
+    <p class="lead">Agregar un nuevo autor.</p>
+    @using (Html.BeginForm("Save", "Libros", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                @Html.HiddenFor(d => d.IdLibro)
+                <div class="form-group label-floating">
+                    @Html.LabelFor(d => d.NombreLibro, new { @class = "control-label" })
+                    @Html.TextBoxFor(d => d.NombreLibro, "", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group label-floating">
+                    @Html.LabelFor(d => d.TipoLibro, htmlAttributes: new { @class = "control-label  " })
+                    @Html.EditorFor(d => d.TipoLibro, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(d => d.TipoLibro, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group label-floating">
+                    @Html.LabelFor(d => d.EditorialLibro, htmlAttributes: new { @class = "control-label  " })
+                    @Html.EditorFor(d => d.EditorialLibro, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(d => d.EditorialLibro, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group label-floating">
+                    @Html.LabelFor(d => d.AnoLibro, htmlAttributes: new { @class = "control-label  " })
+                    @Html.EditorFor(d => d.AnoLibro, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(d => d.AnoLibro, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group label-floating">
+                    @Html.LabelFor(d => d.IdAutor, "Autor", new { @class = "control-label" })
+                    @{
+                        MisionTIC.Models.BibliotecaTicEntities db = new MisionTIC.Models.BibliotecaTicEntities();
+                        List<MisionTIC.Models.Autor> ListAutores = db.Autor.ToList();
+                        <select name="IdAutor" class="form-control">
+                            @{
+                                foreach (MisionTIC.Models.Autor s in ListAutores)
+                                {
+                                    <option value="@s.IdAutor">@s.NombreAutor</option>
+                                }
+                            }
+                        </select>
+                    }
+                    @Html.ValidationMessageFor(d => d.IdAutor, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <p class="text-center" style="margin-top: 20px;">
+                <button type="submit" value="Save" class="btn btn-info btn-raised btn-sm">Guardar</button>
+            </p>
+        </div>
+    }
+</div>
+<div>
+    @Html.ActionLink("Volver", "Lista")
+</div>

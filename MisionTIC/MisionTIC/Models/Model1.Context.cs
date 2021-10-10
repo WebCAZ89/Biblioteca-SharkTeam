@@ -26,5 +26,10 @@ namespace MisionTIC.Models
         }
     
         public virtual DbSet<Autor> Autor { get; set; }
+        public virtual DbSet<Copia> Copia { get; set; }
+        public virtual DbSet<EstadoPrestamo> EstadoPrestamo { get; set; }
+        public virtual DbSet<Lector> Lector { get; set; }
+        public virtual DbSet<Libro> Libro { get; set; }
+        public virtual DbSet<Prestamo> Prestamo { get; set; }
     }
 }

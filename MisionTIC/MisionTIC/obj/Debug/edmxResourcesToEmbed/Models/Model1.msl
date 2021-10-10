@@ -4,10 +4,62 @@
     <EntitySetMapping Name="Autor">
       <EntityTypeMapping TypeName="BibliotecaTicModel.Autor">
         <MappingFragment StoreEntitySet="Autor">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
-          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="FechaNacimientoAutor" ColumnName="FechaNacimientoAutor" />
+          <ScalarProperty Name="NacionalidadAutor" ColumnName="NacionalidadAutor" />
+          <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+          <ScalarProperty Name="IdAutor" ColumnName="IdAutor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Copia">
+      <EntityTypeMapping TypeName="BibliotecaTicModel.Copia">
+        <MappingFragment StoreEntitySet="Copia">
+          <ScalarProperty Name="IdLibro" ColumnName="IdLibro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdCopia" ColumnName="IdCopia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoPrestamo">
+      <EntityTypeMapping TypeName="BibliotecaTicModel.EstadoPrestamo">
+        <MappingFragment StoreEntitySet="EstadoPrestamo">
+          <ScalarProperty Name="IdPrestamo" ColumnName="IdPrestamo" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FechaEstEntrega" ColumnName="FechaEstEntrega" />
+          <ScalarProperty Name="FechaPrestamo" ColumnName="FechaPrestamo" />
+          <ScalarProperty Name="IdEstadoPrestamo" ColumnName="IdEstadoPrestamo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lector">
+      <EntityTypeMapping TypeName="BibliotecaTicModel.Lector">
+        <MappingFragment StoreEntitySet="Lector">
+          <ScalarProperty Name="CorreoLector" ColumnName="CorreoLector" />
+          <ScalarProperty Name="TelefonoLector" ColumnName="TelefonoLector" />
+          <ScalarProperty Name="FechaNacimientoLec" ColumnName="FechaNacimientoLec" />
+          <ScalarProperty Name="NombreLector" ColumnName="NombreLector" />
+          <ScalarProperty Name="Identifiacion" ColumnName="Identifiacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Libro">
+      <EntityTypeMapping TypeName="BibliotecaTicModel.Libro">
+        <MappingFragment StoreEntitySet="Libro">
+          <ScalarProperty Name="NombreLibro" ColumnName="NombreLibro" />
+          <ScalarProperty Name="IdAutor" ColumnName="IdAutor" />
+          <ScalarProperty Name="AnoLibro" ColumnName="AnoLibro" />
+          <ScalarProperty Name="EditorialLibro" ColumnName="EditorialLibro" />
+          <ScalarProperty Name="TipoLibro" ColumnName="TipoLibro" />
+          <ScalarProperty Name="IdLibro" ColumnName="IdLibro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prestamo">
+      <EntityTypeMapping TypeName="BibliotecaTicModel.Prestamo">
+        <MappingFragment StoreEntitySet="Prestamo">
+          <ScalarProperty Name="IdCopia" ColumnName="IdCopia" />
+          <ScalarProperty Name="IdLector" ColumnName="IdLector" />
+          <ScalarProperty Name="IdPrestamo" ColumnName="IdPrestamo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

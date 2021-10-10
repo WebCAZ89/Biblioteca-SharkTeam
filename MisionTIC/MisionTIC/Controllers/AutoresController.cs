@@ -31,10 +31,10 @@ namespace MisionTIC.Controllers
                 list = (from d in db.Autor
                         select new Autors
                         {
-                            Id = d.Id,
-                            Nombre = d.Nombre,
-                            Nacionalidad = d.Nacionalidad,
-                            FechaNacimiento = (DateTime)d.FechaNacimiento
+                            Id = d.IdAutor,
+                            Nombre = d.NombreAutor,
+                            Nacionalidad = d.NacionalidadAutor,
+                            FechaNacimiento = (DateTime)d.FechaNacimientoAutor
                         }).ToList();
             }
             return View(list);
@@ -53,9 +53,9 @@ namespace MisionTIC.Controllers
                     using (BibliotecaTicEntities db = new BibliotecaTicEntities())
                     {
                         var oTabla = new Autor();
-                        oTabla.Nombre = model.Nombre;
-                        oTabla.Nacionalidad = model.Nacionalidad;
-                        oTabla.FechaNacimiento = model.FechaNacimiento;
+                        oTabla.NombreAutor = model.Nombre;
+                        oTabla.NacionalidadAutor = model.Nacionalidad;
+                        oTabla.FechaNacimientoAutor = model.FechaNacimiento;
 
                         db.Autor.Add(oTabla);
                         db.SaveChanges();
@@ -75,10 +75,10 @@ namespace MisionTIC.Controllers
             using (BibliotecaTicEntities db = new BibliotecaTicEntities())
             {
                 var oTabla = db.Autor.Find(Id);
-                model.Nombre = oTabla.Nombre;
-                model.Nacionalidad = oTabla.Nacionalidad;
-                model.FechaNacimiento = (DateTime)oTabla.FechaNacimiento;
-                model.Id = oTabla.Id;
+                model.Nombre = oTabla.NombreAutor;
+                model.Nacionalidad = oTabla.NacionalidadAutor;
+                model.FechaNacimiento = (DateTime)oTabla.FechaNacimientoAutor;
+                model.Id = oTabla.IdAutor;
             }
             return View(model);
         }
@@ -92,9 +92,9 @@ namespace MisionTIC.Controllers
                     using (BibliotecaTicEntities db = new BibliotecaTicEntities())
                     {
                         var oTabla = db.Autor.Find(model.Id);
-                        oTabla.Nombre = model.Nombre;
-                        oTabla.Nacionalidad = model.Nacionalidad;
-                        oTabla.FechaNacimiento = model.FechaNacimiento;
+                        oTabla.NombreAutor = model.Nombre;
+                        oTabla.NacionalidadAutor = model.Nacionalidad;
+                        oTabla.FechaNacimientoAutor = model.FechaNacimiento;
 
                         db.Entry(oTabla).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();

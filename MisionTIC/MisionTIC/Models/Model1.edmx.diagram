@@ -4,8 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="19ed05568cb34d9f8ed0c943b16720cf" Name="Diagram1">
-        <EntityTypeShape EntityType="BibliotecaTicModel.Autor" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="19ed05568cb34d9f8ed0c943b16720cf" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="BibliotecaTicModel.Autor" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="BibliotecaTicModel.Copia" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="BibliotecaTicModel.EstadoPrestamo" Width="1.5" PointX="9.75" PointY="1" />
+        <EntityTypeShape EntityType="BibliotecaTicModel.Lector" Width="1.5" PointX="5.25" PointY="5" />
+        <EntityTypeShape EntityType="BibliotecaTicModel.Libro" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="BibliotecaTicModel.Prestamo" Width="1.5" PointX="7.5" PointY="1" />
+        <AssociationConnector Association="BibliotecaTicModel.FK__Libro__IdAutor__2E1BDC42" />
+        <AssociationConnector Association="BibliotecaTicModel.FK__Copia__IdLibro__30F848ED" />
+        <AssociationConnector Association="BibliotecaTicModel.FK__Prestamo__IdCopi__34C8D9D1" />
+        <AssociationConnector Association="BibliotecaTicModel.FK__EstadoPre__IdPre__37A5467C" />
+        <AssociationConnector Association="BibliotecaTicModel.FK__Prestamo__IdLect__33D4B598" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

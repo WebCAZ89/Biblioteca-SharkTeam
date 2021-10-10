@@ -12,20 +12,21 @@ namespace MisionTIC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Autor
+    public partial class Lector
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Autor()
+        public Lector()
         {
-            this.Libro = new HashSet<Libro>();
+            this.Prestamo = new HashSet<Prestamo>();
         }
     
-        public int IdAutor { get; set; }
-        public string NombreAutor { get; set; }
-        public string NacionalidadAutor { get; set; }
-        public Nullable<System.DateTime> FechaNacimientoAutor { get; set; }
+        public int Identifiacion { get; set; }
+        public string NombreLector { get; set; }
+        public Nullable<System.DateTime> FechaNacimientoLec { get; set; }
+        public Nullable<int> TelefonoLector { get; set; }
+        public string CorreoLector { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Libro> Libro { get; set; }
+        public virtual ICollection<Prestamo> Prestamo { get; set; }
     }
 }
